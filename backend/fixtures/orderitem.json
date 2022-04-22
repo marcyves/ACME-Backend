@@ -1,0 +1,42 @@
+[
+    {
+        "model": "orderitem",
+        "data": {
+            "orderItemId": 1,
+            "orderId": 1,
+            "productId": 4,
+            "price": "132.90",
+            "quantity": 2
+        }
+    },
+    {
+        "model": "orderitem",
+        "data": {
+            "orderItemId": 2,
+            "orderId": 2,
+            "productId": 9,
+            "price": "125.96",
+            "quantity": 1
+        }
+    },
+    {
+        "model": "orderitem",
+        "data": {
+            "orderItemId": 3,
+            "orderId": 2,
+            "productId": 1,
+            "price": "1059.90",
+            "quantity": 1
+        }
+    },
+    {
+        "model": "orderitem",
+        "data": {
+            "orderItemId": 4,
+            "orderId": 3,
+            "productId": 7,
+            "price": "105.00",
+            "quantity": 1
+        }
+    }   
+]

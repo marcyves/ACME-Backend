@@ -1,0 +1,41 @@
+[
+    {
+        "model": "user",
+        "data": {
+            "userId": 1,
+            "surname": "Lefort",
+            "firstname": "Max",
+            "email": "max@adok.info",
+            "pwd": "$2y$10$kDKsblRqmCIesNK3DPyKM.9rnWvd9KRdbhPZQ8BfZZ3RPUDF5TQMS",
+            "pwdDatetime": null,
+            "level": 2,
+            "CMR": null
+        }
+    },
+    {
+        "model": "user",
+        "data": {
+            "userId": 2,
+            "surname": "Legrand",
+            "firstname": "Tom",
+            "email": "top@adok.info",
+            "pwd": "$2y$10$RfltDWx61tClmId/E12uceF38NDS2AMKwnXqNyISwRh.v69rIBmLq",
+            "pwdDatetime": null,
+            "level": 1,
+            "CMR": 50
+        }
+    },
+    {
+        "model": "user",
+        "data": {
+            "userId": 3,
+            "surname": "Dupont",
+            "firstname": "Eva",
+            "email": "eva@adok.info",
+            "pwd": "$2y$10$ED0Nzhn.Wsh2VUrMpC1IZeyycTUCxPhILVr/9jDwdVz3l8q6Z2nbq",
+            "pwdDatetime": null,
+            "level": 1,
+            "CMR": 40
+        }
+    }
+]

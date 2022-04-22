@@ -1,0 +1,38 @@
+{
+  "name": "acmeplus-backend",
+  "version": "1.0.0",
+  "description": "Backend du projet ACMEplus",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "trace": "node --trace-deprecation server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "nodejs",
+    "api"
+  ],
+  "author": "Marc Augier - Visiplus",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.2",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "express-validator": "^6.14.0",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.3.3",
+    "path": "^0.12.7",
+    "sequelize": "^6.15.0",
+    "sequelize-fixtures": "^1.2.0",
+    "sqlite3": "^4.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.8.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "prettier": "2.5.1",
+    "sequelize-cli": "^6.4.1"
+  }
+}

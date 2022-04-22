@@ -1,0 +1,102 @@
+[
+    {
+        "model": "product",
+        "data": {
+            "productId": 1,
+            "categoryId": 1,
+            "name": "Alpina",
+            "ref": "210317 729",
+            "price": "1059.90"
+        }
+    },
+    {
+        "model": "product",
+        "data": {
+            "productId": 2,
+            "categoryId": 2,
+            "name": "Oural",
+            "ref": "210050 609",
+            "price": "240.95"
+        }
+    },
+    {
+        "model": "product",
+        "data": {
+            "productId": 3,
+            "categoryId": 1,
+            "name": "Etna",
+            "ref": "210029 309",
+            "price": "297.41"
+        }
+    },
+    {
+        "model": "product",
+        "data": {
+            "productId": 4,
+            "categoryId": 1,
+            "name": "Stefi",
+            "ref": "310945 426",
+            "price": "132.90"
+        }
+    },
+    {
+        "model": "product",
+        "data": {
+            "productId": 5,
+            "categoryId": 1,
+            "name": "Pronto",
+            "ref": "310551 974",
+            "price": "119.96"
+        }
+    },
+    {
+        "model": "product",
+        "data": {
+            "productId": 6,
+            "categoryId": 1,
+            "name": "Dorte",
+            "ref": "310914 967",
+            "price": "127.46"
+        }
+    },
+    {
+        "model": "product",
+        "data": {
+            "productId": 7,
+            "categoryId": 1,
+            "name": "Anna",
+            "ref": "320960 034",
+            "price": "105.00"
+        }
+    },
+    {
+        "model": "product",
+        "data": {
+            "productId": 8,
+            "categoryId": 1,
+            "name": "Gunte",
+            "ref": "430100 972",
+            "price": "116.96"
+        }
+    },
+    {
+        "model": "product",
+        "data": {
+            "productId": 9,
+            "categoryId": 1,
+            "name": "Elfie",
+            "ref": "430117 990",
+            "price": "125.96"
+        }
+    },
+    {
+        "model": "product",
+        "data": {
+            "productId": 10,
+            "categoryId": 1,
+            "name": "Carla",
+            "ref": "430112 303",
+            "price": "180.00"
+        }
+    }        
+]
