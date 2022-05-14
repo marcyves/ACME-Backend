@@ -1,9 +1,10 @@
 const { sequelize } = require("../models");
+const db = require('../models/index');
 
 class CategoryController {
 
-  constructor(categoryModel) {
-    this.Category = categoryModel;
+  constructor() {
+    this.Category = db.category;
   }
 
   list(){

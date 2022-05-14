@@ -1,10 +1,11 @@
 const fs = require("fs");
+const db = require('../models/index');
 
 class ProductController {
 
-    constructor(productModel, categoryModel) {
-        this.Product = productModel;
-        this.Category = categoryModel;
+    constructor() {
+        this.Product = db.product;
+        this.Category = db.category;
     }
 
     collection(){

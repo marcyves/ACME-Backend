@@ -1,10 +1,12 @@
 const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
+const db = require('../models/index');
 
 class UserController {
 
-  constructor(userModel, orderModel) {
-    this.User = userModel;
-    this.Order = orderModel;
+  constructor() {
+    this.User = db.user;
+    this.Order = db.order;
     this.basket = [];
   }
 
@@ -100,30 +102,39 @@ class UserController {
     .catch(error => res.status(500).json({ error }));
   }
 
-  async login(email, password){
-    User.findOne({ email: email })
-    .then(user => {
+  async login(requete){
+    
+    console.log(`== LOGIN email: ${requete.email}, password: ${requete.password}`);
+    
+    await this.User.findOne({
+      where: { email: requete.email }
+    }).then(user => {
+      console.log(`== user id: ${user.userId} password: ${user.pwd}`);
       if (!user) {
-        return res.status(401).json({ error: 'Utilisateur non trouvé !' });
+        return { status: 401, retour: 'Utilisateur non trouvé !' };
       }
-      bcrypt.compare(password, user.password)
-        .then((valid) => {
-          if (!valid) {
-            return res.status(401).json({ error: 'Mot de passe incorrect !' });
-          }else{
-            res.status(200).json({
-              userId: user.userId,
-              token: jwt.sign(
-                { userId: user._id },
-                'RANDOM_TOKEN_SECRET',
-                { expiresIn: '3600s' }
-              )
-            });
-          }
-        })
-        .catch(error => res.status(500).json({ error }));
+      var valid = bcrypt.compare(requete.password, user.pwd);
+      console.log(`== valid ${valid}`);
+      if (valid) {
+        console.log('true');
+        return { status: 200, retour: json({
+          userId: user.userId,
+          token: jwt.sign(
+            { userId: user._id },
+            process.env.TOKEN_KEY,
+            { expiresIn: '3600s' }
+          )
+        }) };
+      }else{
+        console.log('false');
+        return { status: 401, retour: 'Mot de passe incorrect !' };
+      };
     })
-    .catch(error => res.status(500).json({ error }));
+    .catch(error => {
+      return { status: 401, retour: `02 Utilisateur non trouvé ! (${error})` };
+    });
+    console.log('== LOGIN EXIT');
+    return { status: 401, retour: '03 Utilisateur non trouvé !' };
   }
 
   async logout(){
