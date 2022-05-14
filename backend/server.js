@@ -30,9 +30,9 @@ db.sequelize.sync({ force: true }).then(() => {
   const UserController = require('./controllers/UserController');
 
   const appController = new AppController();
-  const categoryController = new CategoryController(db.category);
-  const productController = new ProductController(db.product, db.category);
-  const userController = new UserController(db.user, db.order);
+  const categoryController = new CategoryController();
+  const productController = new ProductController();
+  const userController = new UserController();
 
   // Création de l'application Node.js
   const app = express();
