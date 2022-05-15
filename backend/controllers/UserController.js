@@ -103,38 +103,37 @@ class UserController {
   }
 
   async login(requete){
-    
-    console.log(`== LOGIN email: ${requete.email}, password: ${requete.password}`);
-    
-    await this.User.findOne({
-      where: { email: requete.email }
-    }).then(user => {
-      console.log(`== user id: ${user.userId} password: ${user.pwd}`);
+       
+    var status = 500;
+    var message = {erreur: "Erreur interne"};
+
+    try{
+      const user = await this.User.findOne({ where: { email: requete.email }});
       if (!user) {
-        return { status: 401, retour: 'Utilisateur non trouvé !' };
-      }
-      var valid = bcrypt.compare(requete.password, user.pwd);
-      console.log(`== valid ${valid}`);
-      if (valid) {
-        console.log('true');
-        return { status: 200, retour: json({
-          userId: user.userId,
-          token: jwt.sign(
-            { userId: user._id },
-            process.env.TOKEN_KEY,
-            { expiresIn: '3600s' }
-          )
-        }) };
+        status = 401;
+        message = {erreur: 'Utilisateur non trouvé !'};
       }else{
-        console.log('false');
-        return { status: 401, retour: 'Mot de passe incorrect !' };
+        const valid = await bcrypt.compare(requete.password, user.pwd);
+        if(valid === true ){
+          status = 200;
+          message = {
+            userId: user.userId,
+            token: jwt.sign(
+              { userId: user._id },
+              process.env.TOKEN_KEY,
+              { expiresIn: '3600s' }
+            )};
+        }else{
+          status = 401;
+          message = {erreur: 'Mot de passe incorrect !'};  
+        }
       };
-    })
-    .catch(error => {
-      return { status: 401, retour: `02 Utilisateur non trouvé ! (${error})` };
-    });
-    console.log('== LOGIN EXIT');
-    return { status: 401, retour: '03 Utilisateur non trouvé !' };
+    }
+    catch(error) {
+      status = 500;
+      message = "Erreur détectée: " + error;
+    }
+    return { status: status, retour: message };
   }
 
   async logout(){

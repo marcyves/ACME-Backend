@@ -67,8 +67,8 @@ module.exports = (params) => {
     });
 
     router.post('/login', async (requete, reponse) => {
-        const data = await userController.login();
-        reponse.json(data);
+        const data = await userController.login(requete.body);
+        reponse.status(data.status).json(data.retour);
     });
 
     router.get('/logout', async (requete, reponse) => {
