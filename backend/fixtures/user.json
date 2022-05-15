@@ -6,7 +6,7 @@
             "surname": "Lefort",
             "firstname": "Max",
             "email": "max@adok.info",
-            "pwd": "$2y$10$kDKsblRqmCIesNK3DPyKM.9rnWvd9KRdbhPZQ8BfZZ3RPUDF5TQMS",
+            "pwd": "$2b$10$e1fqrjMWqT6k62D5.YzNE.DuNbXFzKEdt7/v6vadQKG1vH96q.8lG",
             "pwdDatetime": null,
             "level": 2,
             "CMR": null
@@ -19,7 +19,7 @@
             "surname": "Legrand",
             "firstname": "Tom",
             "email": "top@adok.info",
-            "pwd": "$2y$10$RfltDWx61tClmId/E12uceF38NDS2AMKwnXqNyISwRh.v69rIBmLq",
+            "pwd": "$2b$10$9TQb1NpAjw38pbzpxIbbs.vk0.oN6ozrw4uKTAMxvYDS6iJxxyAGG",
             "pwdDatetime": null,
             "level": 1,
             "CMR": 50
@@ -32,7 +32,7 @@
             "surname": "Dupont",
             "firstname": "Eva",
             "email": "eva@adok.info",
-            "pwd": "$2y$10$ED0Nzhn.Wsh2VUrMpC1IZeyycTUCxPhILVr/9jDwdVz3l8q6Z2nbq",
+            "pwd": "$2b$10$5EFYAwO5jbC58R8GJA.oGuNv0MvJN0WK95dY9XZTPMdPrICIztFc6",
             "pwdDatetime": null,
             "level": 1,
             "CMR": 40
