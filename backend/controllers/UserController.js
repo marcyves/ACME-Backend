@@ -38,7 +38,13 @@ class UserController {
   }
 
   async profile(id){
-    return this.User.findOne({where: {userId: id}});    
+    try{
+      const data = await this.User.findOne({where: {userId: id}});
+      return data;
+    }
+    catch(e){
+      console.log(e);
+    }
   }
 
   async crud(){
@@ -119,7 +125,7 @@ class UserController {
           message = {
             userId: user.userId,
             token: jwt.sign(
-              { userId: user._id },
+              { id: user.userId },
               process.env.TOKEN_KEY,
               { expiresIn: '3600s' }
             )};

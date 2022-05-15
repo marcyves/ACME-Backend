@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const authentification = require('../middleware/auth');
 
 module.exports = (params) => {
 
@@ -31,8 +32,8 @@ module.exports = (params) => {
         reponse.json(data);
     });
 
-    router.get('/profile', async (requete, reponse) => {
-        const data = await userController.profile();
+    router.get('/profile', authentification, async (requete, reponse) => {
+        const data = await userController.profile(requete.userId);
         reponse.json(data);
     });
 
