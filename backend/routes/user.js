@@ -73,7 +73,7 @@ module.exports = (params) => {
     });
 
     router.get('/logout', async (requete, reponse) => {
-        const data = await userController.logout();
+        const data = await userController.logout(requete);
         reponse.json(data);
     });
 
