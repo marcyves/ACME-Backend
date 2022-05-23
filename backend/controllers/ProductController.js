@@ -12,7 +12,6 @@ class ProductController {
         let categories =  await this.Category.findAll();
         const products = await this.Product.findAll();
 
-//      var result =JSON.parse(JSON.stringify(categories));
         categories =JSON.parse(JSON.stringify(categories));
 
         categories.map(function (category, i) {
@@ -30,12 +29,7 @@ class ProductController {
             });
         });
 
-        console.log(categories);
         return categories;
-
-        return this.Product.findAll(
-            {include: [{model: this.Category}]}
-        );
     }
 
     detail(productId){
