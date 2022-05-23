@@ -8,7 +8,31 @@ class ProductController {
         this.Category = db.category;
     }
 
-    collection(){
+    async collection(){
+        let categories =  await this.Category.findAll();
+        const products = await this.Product.findAll();
+
+//      var result =JSON.parse(JSON.stringify(categories));
+        categories =JSON.parse(JSON.stringify(categories));
+
+        categories.map(function (category, i) {
+            category.product = (products.filter(function (product) {
+                if (product.categoryId == category.categoryId) {
+                    return  product;
+                }
+            })).map(function(d2){
+                return {
+                    productId: d2.productId,
+                    name:d2.name,
+                    ref:d2.ref,
+                    price:d2.price
+                }
+            });
+        });
+
+        console.log(categories);
+        return categories;
+
         return this.Product.findAll(
             {include: [{model: this.Category}]}
         );
