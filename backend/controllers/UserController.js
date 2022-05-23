@@ -16,7 +16,6 @@ class UserController {
   }
 
   async basket(){
-    this.basket = [];
     return this.basket;
   }
 
@@ -142,9 +141,9 @@ class UserController {
     return { status: status, retour: message };
   }
 
-  async logout(){
-    if (request.session.userId) {
-      delete request.session.userId;
+  async logout(requete){
+    if (requete.session.userId) {
+      delete requete.session.userId;
       response.json({result: 'SUCCESS'});
     } else {
         response.json({result: 'ERROR', message: 'User is not logged in.'});
